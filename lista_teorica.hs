@@ -61,3 +61,15 @@ funcSecreta = map (\x -> x + 5)
 --11)Explique, em termos conceituais, a principal diferença entre definir um tipo usando type (como type ID = Int) e usando data (como data ID = ID Int).
 --A diferença principal entre type e data em Haskell é que type cria apenas um sinônimo ou apelido para um tipo existente (ex: type ID = Int), tratado pelo compilador como o mesmo tipo original para fins de compatibilidade, sendo usado primariamente para melhorar a legibilidade.
 -- Já o data cria um tipo de dado novo e distinto (ex: data ID = ID Int), que encapsula o tipo subjacente e exige o uso de um construtor de valor (o segundo ID) para empacotar ou desempacotar o dado, garantindo maior segurança de tipos ao impedir a mistura acidental de valores de tipos diferentes.
+
+--12)Crie a função quadrados :: [Int] -> [Int] que retorna o quadrado de cada número em uma lista.
+quadrados :: [Int] -> [Int]
+quadrados = map (\x -> x * x)
+
+--13)Crie a função multiplosDe5 :: [Int] -> [Int] que retorna apenas os números que são múltiplos de 5
+multiplosDe5 :: [Int] -> [Int]
+multiplosDe5 = filter (\x -> mod x 5 == 0)
+
+--14)Crie a função quadradoDosPares :: [Int] -> [Int] que retorna o quadrado apenas dos números pares de uma lista.
+quadradoDosPares :: [Int] -> [Int]
+quadradoDosPares lista = map (\x -> x * x) (filter (\x -> mod x 2 == 0) lista)
